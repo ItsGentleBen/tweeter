@@ -14,7 +14,7 @@ html {
  * Global layout stuff
  */
 
- * { outline: 1px solid mediumvioletred; }
+ /* * { outline: 1px solid mediumvioletred; } */
 
  body {
   color: #545149;
@@ -27,7 +27,7 @@ html {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- main {
+ .container {
   width: 90%;
   background-color: #f4f1ec;
   margin: 0 auto;

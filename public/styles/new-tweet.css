@@ -1,0 +1,28 @@
+.new-tweet textarea {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  border-bottom: 5px solid black;
+  margin-bottom: 0.5em;
+  resize: none;
+  height: 1.6em;
+}
+
+.new-tweet textarea::placeholder{
+  font-weight: bold;
+  color: rgb(84, 81, 73);
+}
+.new-tweet div{
+  display: flex;
+  justify-content: space-between;
+}
+
+.counter {
+  font-family: 'Bungee', cursive;
+}
+
+.new-tweet button{
+  font-family: 'Bungee', cursive;
+  background-color: #4056A1;
+  color: white;
+}
