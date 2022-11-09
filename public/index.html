@@ -25,7 +25,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
+
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
@@ -53,7 +53,7 @@
   </header>
   
     <!-- Page-specific (main) content here -->
-    <main class="container">
+    <main class="container" id="tweets-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form method="POST" action="/tweets">
@@ -85,6 +85,7 @@
         </footer>
       </article>
     </main>
-
+    <script type="text/javascript" src="/scripts/client.js"></script>
   </body>
 </html>
+
