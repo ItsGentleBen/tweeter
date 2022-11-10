@@ -15,6 +15,12 @@ $(document).ready(() => {
     return $('.tweet-feed').prepend(createTweetElement(tweets));
   };
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   const createTweetElement = function (tweet) {
     
     const timeAgo = timeago.format(tweet.created_at);
@@ -28,7 +34,7 @@ $(document).ready(() => {
         </div>
         <span class="handle">${tweet.user.handle}</span>
       </header>
-      <p class="contents">${tweet.content.text}</p>
+      <p class="contents">${escape(tweet.content.text)}</p>
       <footer>
         <p>${timeAgo}</p>
         <div class="action-icons">
