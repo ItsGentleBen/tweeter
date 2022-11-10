@@ -76,12 +76,18 @@ $(document).ready(() => {
       const tweetData = $form.serialize();
       const tweetText = $('#tweet-text').val()
 
+      $('#error-popup').hide();
+
       if (tweetText.length > 140) {
-      return alert("Tweet exceeds 140 character limit.")
+        $('#error-popup').slideDown();
+        $('#error-popup').text('Tweet cannot exceed 140 chararacters.');
+        return;
       };
 
       if (tweetText === "" || tweetText === null) {
-      return alert("Tweet cannot be empty.")
+        $('#error-popup').slideDown();
+        $('#error-popup').text('Tweet cannot be empty.');
+        return;
       };
 
       $.ajax({
@@ -100,4 +106,5 @@ $(document).ready(() => {
 
   loadTweets();
   $form.submit(postTweet());
+  $('#error-popup').hide();
 });

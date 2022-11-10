@@ -17,6 +17,18 @@
   justify-content: space-between;
 }
 
+#error-popup {
+  color: red;
+  display: flex;
+  justify-content: center;
+  border: 4px solid red;
+  padding: 5px;
+  margin: 5px;
+  font-weight: bolder
+  
+  
+};
+
 .counter {
   font-family: 'Bungee', cursive;
 }
@@ -29,4 +41,8 @@
 
 .over-limit {
   color: red
+};
+
+#error-popup {
+  border: 8px solid rgb(227, 45, 32);
 };
