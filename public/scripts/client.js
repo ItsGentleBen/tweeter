@@ -57,8 +57,18 @@ $(document).ready(() => {
 
   $form.on('submit', (event) => {
     event.preventDefault();
-
+    
     const tweetData = $form.serialize();
+    const tweetText = $('#tweet-text').val()
+    
+    if (tweetText.length > 140) {
+      return alert("Tweet exceeds 140 character limit.")
+    };
+
+    if (tweetText === "" || tweetText === null) {
+      return alert("Tweet cannot be empty.")
+    };
+
     $.ajax({
       method: 'POST',
       url: '/tweets',
@@ -66,6 +76,7 @@ $(document).ready(() => {
     })
     .then(tweetData);
     console.log('tweet', tweetData);
+
 
   });
 
