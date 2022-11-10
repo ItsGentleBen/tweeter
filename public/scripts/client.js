@@ -11,7 +11,7 @@ $(document).ready(() => {
     // takes return value and appends it to the tweets container
     for (const tweet of tweets){
       const newTweet = createTweetElement(tweet);
-      $('#tweets-container').append(newTweet);
+      $('.tweet-feed').prepend(newTweet);
     }
   }
 
@@ -57,7 +57,6 @@ $(document).ready(() => {
 
   $form.on('submit', (event) => {
     event.preventDefault();
-    
     const tweetData = $form.serialize();
     const tweetText = $('#tweet-text').val()
     
@@ -68,6 +67,8 @@ $(document).ready(() => {
     if (tweetText === "" || tweetText === null) {
       return alert("Tweet cannot be empty.")
     };
+    
+   
 
     $.ajax({
       method: 'POST',
