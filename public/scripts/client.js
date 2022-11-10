@@ -3,19 +3,19 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 $(document).ready(() => {
-
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-    for (const tweet of tweets){
-      const newTweet = createTweetElement(tweet);
-      $('.tweet-feed').prepend(newTweet);
-    }
-  }
 
-  createTweetElement = function (tweet) {
+    if (Array.isArray(tweets)) {
+      return tweets.forEach(tweet => {
+        $('.tweet-feed').prepend(createTweetElement(tweet));
+      });
+    } 
+    return $('.tweet-feed').prepend(createTweetElement(tweets));
+  };
+
+  const createTweetElement = function (tweet) {
     
     const timeAgo = timeago.format(tweet.created_at);
 
@@ -42,7 +42,7 @@ $(document).ready(() => {
     return ($tweet);
   };
 
-  loadTweets = function () {
+  const loadTweets = function () {
     $.ajax({
       method: 'GET',
       url: '/tweets',
@@ -52,34 +52,46 @@ $(document).ready(() => {
     });
   };
 
+  const loadNewTweet = function() {
+    $.ajax({
+      method: 'GET',
+      url: '/tweets',
+    })
+      .then((data) => {
+        renderTweets(data[data.length - 1]);
+      })
+    };
 
   const $form = $('#tweet-form');
 
-  $form.on('submit', (event) => {
-    event.preventDefault();
-    const tweetData = $form.serialize();
-    const tweetText = $('#tweet-text').val()
-    
-    if (tweetText.length > 140) {
+  const postTweet = function () {
+    $form.on('submit', (event) => {
+      event.preventDefault();
+      const tweetData = $form.serialize();
+      const tweetText = $('#tweet-text').val()
+
+      if (tweetText.length > 140) {
       return alert("Tweet exceeds 140 character limit.")
-    };
+      };
 
-    if (tweetText === "" || tweetText === null) {
+      if (tweetText === "" || tweetText === null) {
       return alert("Tweet cannot be empty.")
-    };
-    
-   
+      };
 
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: tweetData
-    })
-    .then(tweetData);
-    console.log('tweet', tweetData);
+      $.ajax({
+        method: 'POST',
+        url: '/tweets',
+        data: tweetData,
+        success: ()=>{
+          loadNewTweet();
+        }
+      })
 
-
-  });
+      $('#tweet-text').val('');
+      $('.counter').text(140);
+    });
+  };
 
   loadTweets();
+  $form.submit(postTweet());
 });
