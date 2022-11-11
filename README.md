@@ -6,9 +6,9 @@ This was built to practice my skills in HTML, CSS, JS, jQuery and AJAX front-end
 
 ## Final Product
 
-!["screenshot description"](#)
-!["screenshot description"](#)
-!["screenshot description"](#)
+!["screenshot description"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/desktop-layout.png)
+!["screenshot description"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/error-message.png)
+!["screenshot description"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/ipad-layout.png)
 
 ## Dependencies
 
