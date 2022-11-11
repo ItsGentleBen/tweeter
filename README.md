@@ -6,9 +6,9 @@ This was built to practice my skills in HTML, CSS, JS, jQuery and AJAX front-end
 
 ## Final Product
 
-!["screenshot description"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/desktop-layout.png)
-!["screenshot description"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/error-message.png)
-!["screenshot description"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/ipad-layout.png)
+!["Desktop layout"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/desktop-layout.png)
+!["Error message"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/error-message.png)
+!["Ipad layout"](https://github.com/ItsGentleBen/tweeter/blob/master/docs/ipad-layout.png)
 
 ## Dependencies
 
@@ -21,5 +21,5 @@ This was built to practice my skills in HTML, CSS, JS, jQuery and AJAX front-end
 
 - Install all dependencies (using the `npm install` command).
 - Run the development web server using the `npm run local` command.
-- Go to http://localhost:8080/ in your browser.
+- Go to http://localhost:8081/ in your browser.
 
