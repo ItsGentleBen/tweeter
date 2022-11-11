@@ -12,6 +12,7 @@
   font-weight: bold;
   color: rgb(84, 81, 73);
 }
+
 .new-tweet div{
   display: flex;
   justify-content: space-between;
@@ -25,8 +26,6 @@
   padding: 5px;
   margin: 5px;
   font-weight: bolder
-  
-  
 };
 
 .counter {
